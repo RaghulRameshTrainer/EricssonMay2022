@@ -1,0 +1,50 @@
+metacharacters:
+================
+. -> Used to match any single character except a newline character
+? -> used to match the preceding character either 0 time or 1 time
+    Ex:
+        Ram? -> Ra , Ram
+* -> to match the preceding character either 0 times or many times
+    Ex:
+        Ram* -> Ra, Ram, Ramm,Rammm,Rammmm...........
++ -> to match the preceding character either 1 times or many times
+    Ex:
+        Ram+ -> Ram, Ramm,Rammm,Rammmm
+^ -> To match a pattern begining with
+    Ex:
+        ^FIS ->The line that starts with FIS will be matched
+$ -> To match the ends with
+    Ex:
+        Success$ -> Match all the lines that ends with the pattern "Success"
+() ->Grouping operation
+    Ex;
+        Ram+ -> Ram,Ramm,Rammm....
+        (Ram)+ -> Ram, RamRam,RamRamRam.....
+[] -> Any of the character mentioned inside [] will be matched
+    Ex:
+        [aeiou] -> matches all teh word which contains a|e|i|o|u
+|  -> or (either or)
+        Ram|Ramesh -> matches if there is Ram or Ramesh
+{m,n} -> Used to match the preceding character or the word to repeat min m times and max m times
+    Ex:
+        Ram{2,4} -> Ramm,Rammm,Rammmm
+        Ram{2,} ->Ramm,Rammm,Rammmm,Rammmmm......
+        Ram{,3} -> Ram,Ramm,Rammm
+        Ram{2} ->Ramm
+-  -> range operator
+    Ex:
+        [0-9]
+          [a-zA-Z]
+
+Meta Sequences:
+======================
+\d -> to match any digit/number [0-9]
+\D -> matches everything except a digit [0-9]
+\w -> matches any word character [a-zA-Z0-9_]
+\W -> Matches all except a word character [~#$%#%$!^%!^!(]
+\s -> matches a space
+\S -> matches non space character
+\b -> boundary
+    Ex:
+        line="The main street is very broad"
+        \broad\b
